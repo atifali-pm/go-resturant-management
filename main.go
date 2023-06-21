@@ -3,8 +3,9 @@ package main
 import (
 	"os"
 
-	"github.com/atifali-pm/go-resturant-management/middleware"
-	"github.com/atifali-pm/go-resturant-management/routes"
+	"github.com/atifali-pm/go-resturant-management/database"
+	middleware "github.com/atifali-pm/go-resturant-management/middleware"
+	routes "github.com/atifali-pm/go-resturant-management/routes"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -23,8 +24,8 @@ func main() {
 
 	router.Use(gin.Logger())
 
-	routes.UserRouter(router)
-	router.Use(middleware.Authentication)
+	routes.UserRoutes(router)
+	router.Use(middleware.Authentication())
 
 	router.Run(":" + port)
 
