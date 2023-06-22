@@ -14,6 +14,12 @@ func GetOrderItem() gin.HandlerFunc {
 	}
 }
 
+func GetOrderItemByOrder() gin.HandlerFunc {
+	return func(ctx *gin.Context) {
+
+	}
+}
+
 func CreateOrderItem() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 
